@@ -1,0 +1,17 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+    - your-branch-name
+
+jobs: 
+  master:
+    name: build-and-deploy-to-prod-server
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@your-branch-name
+    - run: npm install
+    - run: npm run prerender --production
+    # - Your server deployment command & configuration here
